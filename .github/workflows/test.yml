@@ -21,6 +21,7 @@ jobs:
         os:
           - ubuntu-latest
           - ubuntu-22.04
+          - ubuntu-22.04-arm
     name: Native installer / ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     steps:
@@ -30,15 +31,15 @@ jobs:
         uses: ./
         with:
           use-installer: true
-          version: "1.71.0"
-      - run: sam --version | grep -F 1.71.0
+          version: "1.104.0"
+      - run: sam --version | grep -F 1.104.0
 
       - name: Test official installer (pinned version; should use cache)
         uses: ./
         with:
           use-installer: true
-          version: "1.71.0"
-      - run: sam --version | grep -F 1.71.0
+          version: "1.104.0"
+      - run: sam --version | grep -F 1.104.0
 
       - name: Test official installer (latest version)
         uses: ./
