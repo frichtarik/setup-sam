@@ -62,7 +62,10 @@ jobs:
           - windows-2019
         python:
           - "3.9"
+          - "3.10"
+          - "3.11"
           - "3.12"
+          - "3.13"
     name: PyPI / ${{ matrix.os }} / ${{ matrix.python }}
     runs-on: ${{ matrix.os }}
     steps:
